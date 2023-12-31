@@ -261,9 +261,12 @@ ul li a, .nav-icon a{
     border-radius: 4px;
     display: inline-block;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
     box-sizing: border-box;
     text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
 }
 
 .btn-success{
@@ -275,6 +278,12 @@ ul li a, .nav-icon a{
     background-color: #29ABE2; /* Background color added */
     color: #ffffff;
 }
+
+.btn-danger{
+    background-color: #c80000; /* Background color added */
+    color: #ffffff;
+}
+
 
 .b-warning{
     background-color: #ED9758;
@@ -293,7 +302,7 @@ ul li a, .nav-icon a{
 }
 
 /** Sidebar */
-#categories{
+#categories, #featured-image{
  border-top: 1px solid #cccccc;
 }
 
@@ -321,6 +330,37 @@ ul li a, .nav-icon a{
 
 #socials ul li img{
     width: 20px;
+}
+
+/** Single blog **/
+
+.single-blog-image{
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+/** Form Control **/
+
+.form-control{
+    height: 50px;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d2;
+}
+
+.form-control:focus-visible{
+    outline: none;
+}
+
+
+#content{
+    display: block;
 }
 
 @keyframes slide-in{
