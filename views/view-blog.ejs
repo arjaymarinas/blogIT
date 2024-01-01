@@ -1,38 +1,5 @@
 <%- include("partials/header.ejs") %>
 
-    <header class="w-border">
-        <nav class="menu-container flex space-between align-center">
-            <a href=""><img src="/images/nav-icon.png" alt="BlogIT Logo" height="30"></a>
-            <div class="nav-icon md-block"><a href="#"><span class="material-symbols-outlined h4 txt-brand">menu</span></a></div>
-            <div class="nav-items">
-                <ul class="flex list-style-none gap-lg">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-   
-    <div class="m-menu-container flex column">
-        <div class="m-header flex space-between align-center">
-            <h1 class="title"></h1>
-            <span class="material-symbols-outlined nav-icon">close</span>
-        </div>
-        <div class="m-body">
-            <ul class="flex column list-style-none gap-md">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Blog</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="m-footer flex space-between align-center">
-            <h6 class="title">&copy; Copyright BlogIT 2023. All rights reserved.</h6>
-        </div>
-    </div>
-
     <main>
         <div class="w-border sidebar-right">
             <div id="blog-container" class="py-2">
@@ -50,7 +17,10 @@
                 </div>
             </div>
             <div id="sidebar" class="py-2">
-                <a href="/blogs/create-post" class="btn btn-info mb-1 w-12">Create new post <span class="material-symbols-outlined">edit_note</span></a>
+                <% if(!(blogID == 0 || blogID == 1)){ %>
+                    <a href="/blogs/view/edit-post/<%= blogID %>" class="btn btn-warning mb-1 w-12">Edit post</a>
+                <% } %>
+                <a href="/blogs/create-post" class="btn btn-info mb-1 w-12">Create new post </a>
                 <div id="categories" class="pt-1 pb-1">
                     <h4>Categories</h4>
                     <ul>

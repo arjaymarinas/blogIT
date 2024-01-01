@@ -1,36 +1,4 @@
 <%- include("partials/header.ejs") %>
-    <header class="w-border">
-        <nav class="menu-container flex space-between align-center">
-            <a href=""><img src="./images/nav-icon.png" alt="BlogIT Logo" height="30"></a>
-            <div class="nav-icon md-block"><a href="#"><span class="material-symbols-outlined h4 txt-brand">menu</span></a></div>
-            <div class="nav-items">
-                <ul class="flex list-style-none gap-lg">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-   
-    <div class="m-menu-container flex column">
-        <div class="m-header flex space-between align-center">
-            <h1 class="title"></h1>
-            <span class="material-symbols-outlined nav-icon">close</span>
-        </div>
-        <div class="m-body">
-            <ul class="flex column list-style-none gap-md">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Blog</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="m-footer flex space-between align-center">
-            <h6 class="title">&copy; Copyright BlogIT 2023. All rights reserved.</h6>
-        </div>
-    </div>
 
     <main>
         <div class="w-border sidebar-right">
@@ -56,13 +24,17 @@
                         
                     
                     <div class="blog-item">
-                        <div class="blog-item-image" style="background-image: url('./images/blogs/1.png');"></div>
+                        <div class="blog-item-image" style="background-image: url('./images/blogs/<%= blog.image %>');"></div>
                         <div class="blog-item-content">
                             <% var trimTitle = blog.title.substring(0, 30) %>
                             <h3 class="blog-item-title"><%=  trimTitle + " ..." %></h3>
                             <p class="blog-item-excerpt">
-                                <%  var trimContent = blog.content.substring(0, 150); %>
-                                <%=  trimContent + " ..." %>
+                                <%  var trimContent = blog.excerpt.substring(0, 100); %>
+                                <% if (blog.excerpt.length > 100){ %>
+                                    <%=  trimContent + " ..." %>
+                                <% }else{ %>
+                                    <%=  trimContent %>
+                                <% } %>
                             </p>
                             <a href="/blogs/view/<%= index %>" class="btn btn-success">Read More</a>
                         </div>

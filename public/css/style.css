@@ -8,7 +8,7 @@ body{
     overflow-x: hidden;
 }
 
-ul, ul li, h1, h2, h3, h4, h5, h6, p{
+ul, ul li{
     margin: 0;
     padding: 0;
 }
@@ -284,6 +284,11 @@ ul li a, .nav-icon a{
     color: #ffffff;
 }
 
+.btn-warning{
+    background-color: #ED9758; /* Background color added */
+    color: #ffffff;
+}
+
 
 .b-warning{
     background-color: #ED9758;
@@ -358,6 +363,12 @@ ul li a, .nav-icon a{
     outline: none;
 }
 
+#excerpt{
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    resize: none;
+}
 
 #content{
     display: block;

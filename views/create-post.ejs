@@ -1,37 +1,6 @@
 <%- include("partials/header.ejs") %>
-
-    <header class="w-border">
-        <nav class="menu-container flex space-between align-center">
-            <a href=""><img src="/images/nav-icon.png" alt="BlogIT Logo" height="30"></a>
-            <div class="nav-icon md-block"><a href="#"><span class="material-symbols-outlined h4 txt-brand">menu</span></a></div>
-            <div class="nav-items">
-                <ul class="flex list-style-none gap-lg">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
    
-    <div class="m-menu-container flex column">
-        <div class="m-header flex space-between align-center">
-            <h1 class="title"></h1>
-            <span class="material-symbols-outlined nav-icon">close</span>
-        </div>
-        <div class="m-body">
-            <ul class="flex column list-style-none gap-md">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Blog</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        <div class="m-footer flex space-between align-center">
-            <h6 class="title">&copy; Copyright BlogIT 2023. All rights reserved.</h6>
-        </div>
-    </div>
+
 
     <form action="/create-post/submit" method="post" enctype="multipart/form-data">
     <main>
@@ -47,15 +16,19 @@
                         <input type="text" name="title" class="form-control" required>
                     </div>
                     <div class="w-12 mb-2">
+                        <label for="excerpt"><h3 class="mb-1">Excerpt</h3></label>
+                        <textarea name="excerpt" id="excerpt" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                    <div class="w-12 mb-2">
                         <label for="title"><h3 class="mb-1">Content</h3></label>
                         <script>
                             tinymce.init({
-                                selector: 'textarea',
+                                selector: '#content',
                                 plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
                                 toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
                             });
                         </script>
-                        <textarea name="content" required>
+                        <textarea name="content" id="content" required>
                     
                         </textarea>
                     </div>
@@ -63,7 +36,7 @@
             </div>
             <div id="sidebar" class="py-2">
                 <input type="submit" class="btn btn-success w-12 mb-1">
-                <a href="/blogs/create-post" class="btn btn-danger mb-1 w-12">Cancel </a>
+                <a href="/" class="btn btn-danger mb-1 w-12">Cancel </a>
 
                 <div id="featured-image" class="pt-1 pb-1">
                     <h4>Featured Image</h4>
